@@ -299,82 +299,14 @@
 
       
         
-          
-            <h1 id="Python-学习笔记-if语句"><a href="#Python-学习笔记-if语句" class="headerlink" title="Python 学习笔记_if语句"></a>Python 学习笔记_if语句</h1><h2 id="《Python编程：从入门到实践》"><a href="#《Python编程：从入门到实践》" class="headerlink" title="《Python编程：从入门到实践》"></a>《Python编程：从入门到实践》</h2><h3 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h3><h4 id="5-1-一个简单示例"><a href="#5-1-一个简单示例" class="headerlink" title="5.1 一个简单示例"></a>5.1 一个简单示例</h4><pre><code>for car in cars: 
-if car == &apos;bmw&apos;: 
-print(car.upper()) 
-else: 
-print(car.title()) 
-</code></pre><p> 前面知识回顾</p>
-<pre><code>car = &apos;Audi&apos;
-car.lower() == &apos;audi&apos;
-True 
-car
-&apos;Audi&apos; 
-</code></pre><h4 id="5-2-5-检查多个条件"><a href="#5-2-5-检查多个条件" class="headerlink" title="5.2.5 检查多个条件"></a>5.2.5 检查多个条件</h4><h5 id="1-使用and检查多个条件"><a href="#1-使用and检查多个条件" class="headerlink" title="1. 使用and检查多个条件"></a>1. 使用and检查多个条件</h5><pre><code>age_0 &gt;= 21 and age_1 &gt;= 21 
-True 
-</code></pre><p>为改善可读性，可将每个测试都分别放在一对括号内</p>
-<pre><code>(age_0 &gt;= 21) and (age_1 &gt;= 21) 
-</code></pre><h5 id="2-使用or检查多个条件"><a href="#2-使用or检查多个条件" class="headerlink" title="2. 使用or检查多个条件"></a>2. 使用or检查多个条件</h5><h4 id="5-2-6-检查特定值是否包含在列表中"><a href="#5-2-6-检查特定值是否包含在列表中" class="headerlink" title="5.2.6 检查特定值是否包含在列表中"></a>5.2.6 检查特定值是否包含在列表中</h4><p>要判断特定的值是否已包含在列表中，可使用关键字in</p>
-<pre><code>requested_toppings = [&apos;mushrooms&apos;, &apos;onions&apos;, &apos;pineapple&apos;] 
- &apos;mushrooms&apos; in requested_toppings 
-True 
-</code></pre><h4 id="5-2-7-检查特定值是否不包含在列表中"><a href="#5-2-7-检查特定值是否不包含在列表中" class="headerlink" title="5.2.7 检查特定值是否不包含在列表中"></a>5.2.7 检查特定值是否不包含在列表中</h4><pre><code>banned_users = [&apos;andrew&apos;, &apos;carolina&apos;, &apos;david&apos;] 
-user = &apos;marie&apos; 
- if user not in banned_users: 
- print(user.title() + &quot;, you can post a response if you wish.&quot;)
-</code></pre><h4 id="5-3-if-语句"><a href="#5-3-if-语句" class="headerlink" title="5.3 if 语句"></a>5.3 if 语句</h4><h4 id="5-3-1-简单的-if-语句"><a href="#5-3-1-简单的-if-语句" class="headerlink" title="5.3.1 简单的 if 语句"></a>5.3.1 简单的 if 语句</h4><h4 id="5-3-2-if-else-语句"><a href="#5-3-2-if-else-语句" class="headerlink" title="5.3.2 if-else 语句"></a>5.3.2 if-else 语句</h4><pre><code>age = 17 
- if age &gt;= 18: 
- print(&quot;You are old enough to vote!&quot;) 
- print(&quot;Have you registered to vote yet?&quot;)
-else: 
- print(&quot;Sorry, you are too young to vote.&quot;) 
- print(&quot;Please register to vote as soon as you turn 18!&quot;) 
-</code></pre><h4 id="5-3-3-if-elif-else-结构"><a href="#5-3-3-if-elif-else-结构" class="headerlink" title="5.3.3 if-elif-else 结构"></a>5.3.3 if-elif-else 结构</h4><p>Python只执行<br>if-elif-else结构中的一个代码块，它依次检查每个条件测试，直到遇到通过了的条件测试。</p>
-<pre><code>age = 12 
-if age &lt; 4: 
-print(&quot;Your admission cost is $0.&quot;) 
-elif age &lt; 18: 
-print(&quot;Your admission cost is $5.&quot;) 
-else: 
-print(&quot;Your admission cost is $10.&quot;) 
-</code></pre><p>更高效率的代码：</p>
-<pre><code>if age &lt; 4: 
- price = 0 
-elif age &lt; 18: 
- price = 5 
-else: 
- price = 10 
- print(&quot;Your admission cost is $&quot; + str(price) + &quot;.&quot;) 
-</code></pre><h4 id="5-3-4-使用多个-elif-代码块"><a href="#5-3-4-使用多个-elif-代码块" class="headerlink" title="5.3.4 使用多个 elif 代码块"></a>5.3.4 使用多个 elif 代码块</h4><h4 id="5-3-5-省略-else-代码块"><a href="#5-3-5-省略-else-代码块" class="headerlink" title="5.3.5 省略 else 代码块"></a>5.3.5 省略 else 代码块</h4><h4 id="5-3-6-测试多个条件"><a href="#5-3-6-测试多个条件" class="headerlink" title="5.3.6 测试多个条件"></a>5.3.6 测试多个条件</h4><p>就是连续使用if</p>
-<h4 id="5-4-使用-if-语句处理列表"><a href="#5-4-使用-if-语句处理列表" class="headerlink" title="5.4 使用 if 语句处理列表"></a>5.4 使用 if 语句处理列表</h4><h4 id="5-4-1-检查特殊元素"><a href="#5-4-1-检查特殊元素" class="headerlink" title="5.4.1 检查特殊元素"></a>5.4.1 检查特殊元素</h4><p>for中添加if</p>
-<pre><code>for requested_topping in requested_toppings: 
- if requested_topping == &apos;green peppers&apos;: 
- print(&quot;Sorry, we are out of green peppers right now.&quot;) 
- else: 
- print(&quot;Adding &quot; + requested_topping + &quot;.&quot;) 
-</code></pre><h4 id="5-4-2-确定列表不是空的"><a href="#5-4-2-确定列表不是空的" class="headerlink" title="5.4.2 确定列表不是空的"></a>5.4.2 确定列表不是空的</h4><p>先if检查再用for循环</p>
-<pre><code>requested_toppings = [] 
-if requested_toppings: 
-for requested_topping in requested_toppings: 
- print(&quot;Adding &quot; + requested_topping + &quot;.&quot;) 
- print(&quot;\nFinished making your pizza!&quot;) 
- else: 
- print(&quot;Are you sure you want a plain pizza?&quot;) 
-</code></pre><h4 id="5-4-3-使用多个列表"><a href="#5-4-3-使用多个列表" class="headerlink" title="5.4.3 使用多个列表"></a>5.4.3 使用多个列表</h4><p>顾客所要求的为一个列表<br>可提供的为一个列表</p>
-<pre><code>available_toppings = [&apos;mushrooms&apos;, &apos;olives&apos;, &apos;green peppers&apos;, 
- &apos;pepperoni&apos;, &apos;pineapple&apos;, &apos;extra cheese&apos;] 
-requested_toppings = [&apos;mushrooms&apos;, &apos;french fries&apos;, &apos;extra cheese&apos;] 
-for requested_topping in requested_toppings: 
- if requested_topping in available_toppings: 
- print(&quot;Adding &quot; + requested_topping + &quot;.&quot;) 
- else: 
- print(&quot;Sorry, we don&apos;t have &quot; + requested_topping + &quot;.&quot;)
-</code></pre><p>不要这样写</p>
-<pre><code>if user.lower() or user.title() in users
-</code></pre><p>容易因为or出错</p>
-
-          
+          <h1 id="Python-学习笔记-if语句"><a href="#Python-学习笔记-if语句" class="headerlink" title="Python 学习笔记_if语句"></a>Python 学习笔记_if语句</h1><h2 id="《Python编程：从入门到实践》"><a href="#《Python编程：从入门到实践》" class="headerlink" title="《Python编程：从入门到实践》"></a>《Python编程：从入门到实践》</h2><h3 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/15/Pythonsdtudy/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
