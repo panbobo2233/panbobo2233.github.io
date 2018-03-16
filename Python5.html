@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="《Python编程：从入门到实践》第五章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 学习笔记_if语句">
+<meta property="og:url" content="http://www.yiboo.club/Python5.html">
+<meta property="og:site_name" content="Welcome to yiboo club">
+<meta property="og:description" content="《Python编程：从入门到实践》第五章">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-15T01:19:40.037Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python 学习笔记_if语句">
+<meta name="twitter:description" content="《Python编程：从入门到实践》第五章">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.yiboo.club/Python5.html"/>
+
+
+
+
+
+  <title>Python 学习笔记_if语句 | Welcome to yiboo club</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Welcome to yiboo club</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.yiboo.club/Python5.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Panbobo2233">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p5keggm4y.bkt.clouddn.com/icerabbits.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to yiboo club">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python 学习笔记_if语句</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T09:20:02+08:00">
+                2018-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="《Python编程：从入门到实践》"><a href="#《Python编程：从入门到实践》" class="headerlink" title="《Python编程：从入门到实践》"></a>《Python编程：从入门到实践》</h2><h3 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h3><a id="more"></a>
+<h4 id="5-1-一个简单示例"><a href="#5-1-一个简单示例" class="headerlink" title="5.1 一个简单示例"></a>5.1 一个简单示例</h4><pre><code>for car in cars: 
+if car == &apos;bmw&apos;: 
+print(car.upper()) 
+else: 
+print(car.title()) 
+</code></pre><p> 前面知识回顾</p>
+<pre><code>car = &apos;Audi&apos;
+car.lower() == &apos;audi&apos;
+True 
+car
+&apos;Audi&apos; 
+</code></pre><h4 id="5-2-5-检查多个条件"><a href="#5-2-5-检查多个条件" class="headerlink" title="5.2.5 检查多个条件"></a>5.2.5 检查多个条件</h4><h5 id="1-使用and检查多个条件"><a href="#1-使用and检查多个条件" class="headerlink" title="1. 使用and检查多个条件"></a>1. 使用and检查多个条件</h5><pre><code>age_0 &gt;= 21 and age_1 &gt;= 21 
+True 
+</code></pre><p>为改善可读性，可将每个测试都分别放在一对括号内</p>
+<pre><code>(age_0 &gt;= 21) and (age_1 &gt;= 21) 
+</code></pre><h5 id="2-使用or检查多个条件"><a href="#2-使用or检查多个条件" class="headerlink" title="2. 使用or检查多个条件"></a>2. 使用or检查多个条件</h5><h4 id="5-2-6-检查特定值是否包含在列表中"><a href="#5-2-6-检查特定值是否包含在列表中" class="headerlink" title="5.2.6 检查特定值是否包含在列表中"></a>5.2.6 检查特定值是否包含在列表中</h4><p>要判断特定的值是否已包含在列表中，可使用关键字in</p>
+<pre><code>requested_toppings = [&apos;mushrooms&apos;, &apos;onions&apos;, &apos;pineapple&apos;] 
+ &apos;mushrooms&apos; in requested_toppings 
+True 
+</code></pre><h4 id="5-2-7-检查特定值是否不包含在列表中"><a href="#5-2-7-检查特定值是否不包含在列表中" class="headerlink" title="5.2.7 检查特定值是否不包含在列表中"></a>5.2.7 检查特定值是否不包含在列表中</h4><pre><code>banned_users = [&apos;andrew&apos;, &apos;carolina&apos;, &apos;david&apos;] 
+user = &apos;marie&apos; 
+ if user not in banned_users: 
+ print(user.title() + &quot;, you can post a response if you wish.&quot;)
+</code></pre><h4 id="5-3-if-语句"><a href="#5-3-if-语句" class="headerlink" title="5.3 if 语句"></a>5.3 if 语句</h4><h4 id="5-3-1-简单的-if-语句"><a href="#5-3-1-简单的-if-语句" class="headerlink" title="5.3.1 简单的 if 语句"></a>5.3.1 简单的 if 语句</h4><h4 id="5-3-2-if-else-语句"><a href="#5-3-2-if-else-语句" class="headerlink" title="5.3.2 if-else 语句"></a>5.3.2 if-else 语句</h4><pre><code>age = 17 
+ if age &gt;= 18: 
+ print(&quot;You are old enough to vote!&quot;) 
+ print(&quot;Have you registered to vote yet?&quot;)
+else: 
+ print(&quot;Sorry, you are too young to vote.&quot;) 
+ print(&quot;Please register to vote as soon as you turn 18!&quot;) 
+</code></pre><h4 id="5-3-3-if-elif-else-结构"><a href="#5-3-3-if-elif-else-结构" class="headerlink" title="5.3.3 if-elif-else 结构"></a>5.3.3 if-elif-else 结构</h4><p>Python只执行<br>if-elif-else结构中的一个代码块，它依次检查每个条件测试，直到遇到通过了的条件测试。</p>
+<pre><code>age = 12 
+if age &lt; 4: 
+print(&quot;Your admission cost is $0.&quot;) 
+elif age &lt; 18: 
+print(&quot;Your admission cost is $5.&quot;) 
+else: 
+print(&quot;Your admission cost is $10.&quot;) 
+</code></pre><p>更高效率的代码：</p>
+<pre><code>if age &lt; 4: 
+ price = 0 
+elif age &lt; 18: 
+ price = 5 
+else: 
+ price = 10 
+ print(&quot;Your admission cost is $&quot; + str(price) + &quot;.&quot;) 
+</code></pre><h4 id="5-3-4-使用多个-elif-代码块"><a href="#5-3-4-使用多个-elif-代码块" class="headerlink" title="5.3.4 使用多个 elif 代码块"></a>5.3.4 使用多个 elif 代码块</h4><h4 id="5-3-5-省略-else-代码块"><a href="#5-3-5-省略-else-代码块" class="headerlink" title="5.3.5 省略 else 代码块"></a>5.3.5 省略 else 代码块</h4><h4 id="5-3-6-测试多个条件"><a href="#5-3-6-测试多个条件" class="headerlink" title="5.3.6 测试多个条件"></a>5.3.6 测试多个条件</h4><p>就是连续使用if</p>
+<h4 id="5-4-使用-if-语句处理列表"><a href="#5-4-使用-if-语句处理列表" class="headerlink" title="5.4 使用 if 语句处理列表"></a>5.4 使用 if 语句处理列表</h4><h4 id="5-4-1-检查特殊元素"><a href="#5-4-1-检查特殊元素" class="headerlink" title="5.4.1 检查特殊元素"></a>5.4.1 检查特殊元素</h4><p>for中添加if</p>
+<pre><code>for requested_topping in requested_toppings: 
+ if requested_topping == &apos;green peppers&apos;: 
+ print(&quot;Sorry, we are out of green peppers right now.&quot;) 
+ else: 
+ print(&quot;Adding &quot; + requested_topping + &quot;.&quot;) 
+</code></pre><h4 id="5-4-2-确定列表不是空的"><a href="#5-4-2-确定列表不是空的" class="headerlink" title="5.4.2 确定列表不是空的"></a>5.4.2 确定列表不是空的</h4><p>先if检查再用for循环</p>
+<pre><code>requested_toppings = [] 
+if requested_toppings: 
+for requested_topping in requested_toppings: 
+ print(&quot;Adding &quot; + requested_topping + &quot;.&quot;) 
+ print(&quot;\nFinished making your pizza!&quot;) 
+ else: 
+ print(&quot;Are you sure you want a plain pizza?&quot;) 
+</code></pre><h4 id="5-4-3-使用多个列表"><a href="#5-4-3-使用多个列表" class="headerlink" title="5.4.3 使用多个列表"></a>5.4.3 使用多个列表</h4><p>顾客所要求的为一个列表<br>可提供的为一个列表</p>
+<pre><code>available_toppings = [&apos;mushrooms&apos;, &apos;olives&apos;, &apos;green peppers&apos;, 
+ &apos;pepperoni&apos;, &apos;pineapple&apos;, &apos;extra cheese&apos;] 
+requested_toppings = [&apos;mushrooms&apos;, &apos;french fries&apos;, &apos;extra cheese&apos;] 
+for requested_topping in requested_toppings: 
+ if requested_topping in available_toppings: 
+ print(&quot;Adding &quot; + requested_topping + &quot;.&quot;) 
+ else: 
+ print(&quot;Sorry, we don&apos;t have &quot; + requested_topping + &quot;.&quot;)
+</code></pre><p>不要这样写</p>
+<pre><code>if user.lower() or user.title() in users
+</code></pre><p>容易因为or出错</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/study.html" rel="next" title="Hello">
+                <i class="fa fa-chevron-left"></i> Hello
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/python6.html" rel="prev" title="Python 学习笔记_字典">
+                Python 学习笔记_字典 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDgzNC8xMTM3MQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://p5keggm4y.bkt.clouddn.com/icerabbits.jpg"
+                alt="Panbobo2233" />
+            
+              <p class="site-author-name" itemprop="name">Panbobo2233</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#《Python编程：从入门到实践》"><span class="nav-number">1.</span> <span class="nav-text">《Python编程：从入门到实践》</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第五章"><span class="nav-number">1.1.</span> <span class="nav-text">第五章</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-一个简单示例"><span class="nav-number">1.1.1.</span> <span class="nav-text">5.1 一个简单示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-5-检查多个条件"><span class="nav-number">1.1.2.</span> <span class="nav-text">5.2.5 检查多个条件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-使用and检查多个条件"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1. 使用and检查多个条件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-使用or检查多个条件"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">2. 使用or检查多个条件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-6-检查特定值是否包含在列表中"><span class="nav-number">1.1.3.</span> <span class="nav-text">5.2.6 检查特定值是否包含在列表中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-7-检查特定值是否不包含在列表中"><span class="nav-number">1.1.4.</span> <span class="nav-text">5.2.7 检查特定值是否不包含在列表中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-if-语句"><span class="nav-number">1.1.5.</span> <span class="nav-text">5.3 if 语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-1-简单的-if-语句"><span class="nav-number">1.1.6.</span> <span class="nav-text">5.3.1 简单的 if 语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-2-if-else-语句"><span class="nav-number">1.1.7.</span> <span class="nav-text">5.3.2 if-else 语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-3-if-elif-else-结构"><span class="nav-number">1.1.8.</span> <span class="nav-text">5.3.3 if-elif-else 结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-4-使用多个-elif-代码块"><span class="nav-number">1.1.9.</span> <span class="nav-text">5.3.4 使用多个 elif 代码块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-5-省略-else-代码块"><span class="nav-number">1.1.10.</span> <span class="nav-text">5.3.5 省略 else 代码块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-6-测试多个条件"><span class="nav-number">1.1.11.</span> <span class="nav-text">5.3.6 测试多个条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-使用-if-语句处理列表"><span class="nav-number">1.1.12.</span> <span class="nav-text">5.4 使用 if 语句处理列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-1-检查特殊元素"><span class="nav-number">1.1.13.</span> <span class="nav-text">5.4.1 检查特殊元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-2-确定列表不是空的"><span class="nav-number">1.1.14.</span> <span class="nav-text">5.4.2 确定列表不是空的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-3-使用多个列表"><span class="nav-number">1.1.15.</span> <span class="nav-text">5.4.3 使用多个列表</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Panbobo2233</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
